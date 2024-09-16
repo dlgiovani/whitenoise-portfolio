@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { drawNoise, callSetTimeout } from "./effects/noise.js";
-import projects from './data/projects.js';
 
 function App() {
 
@@ -11,7 +10,7 @@ function App() {
   const [showcaseSize, setShowcaseSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    fetch('https://dlgiovani.github.io/data/projects.js').then((r) => setMyProjects(r.json()))
+    fetch('https://dlgiovani.github.io/data/projects.json').then(async (r) => setMyProjects(await r.json()))
     if (canvasRef.current) {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
