@@ -2,7 +2,7 @@
   "name": "portfolio",
   "private": false,
   "version": "0.0.1",
-  "homepage": "gttps://dlgiovani.github.io/whitenoise-portfolio/",
+  "homepage": "https://dlgiovani.github.io/whitenoise-portfolio/",
   "type": "module",
   "scripts": {
     "dev": "vite",
