@@ -4,14 +4,14 @@ import projects from './data/projects.js';
 
 function App() {
 
-  const [myProjects, setMyProjects] = useState(null);
+  const [myProjects, setMyProjects] = useState([]);
   const canvasRef = useRef(null);
   const [showcase, setShowcase] = useState(null);
   const [showcasePosition, setShowcasePosition] = useState([0, 0]);
   const [showcaseSize, setShowcaseSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    fetch('https://dlgiovani.github.io/data/projects.js').then((r) => setMyProjects(JSON.parse(r.data)))
+    fetch('https://dlgiovani.github.io/data/projects.js').then((r) => setMyProjects(r.json()))
     if (canvasRef.current) {
       const canvas = canvasRef.current;
       const ctx = canvas.getContext('2d');
